@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="DEJIMA is a novel large-scale Japanese dataset for image captioning and visual question answering, constructed using a scalable and reproducible pipeline integrating web collection, filtering, object-detection-driven evidence extraction, and LLM-based refinement.">
+  <meta name="keywords" content="DEJIMA, Image Captioning, Visual Question Answering, Japanese Dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEJIMA: A Novel Large-scale Japanese Dataset for Image Captioning and Visual Question Answering</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DEJIMA: A Novel Large-scale Japanese Dataset for Image Captioning
+              and Visual Question Answering</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Toshiki Katsube<sup>1</sup>,</span>
+              <span class="author-block">Taiga Fukuhara<sup>1</sup>,</span>
+              <span class="author-block">Kenichiro Ando<sup>2,1</sup>,</span>
+              <span class="author-block">Yusuke Mukuta<sup>1,2</sup>,</span>
+              <span class="author-block">Kohei Uehara<sup>1</sup>,</span>
+              <span class="author-block">Tatsuya Harada<sup>1,2</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Tokyo,</span>
+              <span class="author-block"><sup>2</sup>RIKEN</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/dataset-example.png" alt="DEJIMA dataset example images." />
+        <h2 class="subtitle has-text-centered">
+          Example image-text pair from the DEJIMA dataset.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              This work addresses the scarcity of high-quality, large-scale resources for Japanese Vision-and-Language
+              (V&L) modeling.
+            </p>
+            <p>We present a scalable and reproducible pipeline that integrates large-scale web collection with rigorous
+              filtering/deduplication, object-detection-driven evidence extraction, and Large Language Model (LLM)-based
+              refinement under grounding constraints. Using this pipeline, we build two resources: an image–caption
+              dataset (DEJIMA-Cap) and a VQA dataset (DEJIMA-VQA), each containing 3.88M image–text pairs, far exceeding
+              the size of existing Japanese V&L datasets.
+            </p>
+            <p>
+              Human evaluations demonstrate that DEJIMA achieves substantially higher Japaneseness and linguistic
+              naturalness than datasets constructed via translation or manual annotation, while maintaining factual
+              correctness at a level comparable to human-annotated corpora. Quantitative analyses of image feature
+              distributions further confirm that DEJIMA broadly covers diverse visual domains characteristic of Japan,
+              complementing its linguistic and cultural representativeness. Models trained on DEJIMA exhibit consistent
+              improvements across multiple Japanese multimodal benchmarks, confirming that
+              culturally grounded, large-scale resources play a key role in enhancing model performance.
+            </p>
+            <p>
+              All data sources and modules in our pipeline are licensed for commercial use, and we publicly release the
+              resulting dataset and metadata to encourage further research and industrial applications in Japanese V&L
+              modeling.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Pipeline</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/pipeline.svg" alt="DEJIMA dataset construction pipeline." />
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Dataset. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Dataset</h2>
+
+          <!-- Statistical Comparison. -->
+          <h3 class="title is-4" id="statistical-comparison">Statistical Comparison</h3>
+          <div class="content has-text-justified">
+            <div class="table-container">
+              <table class="table is-striped is-fullwidth is-narrow">
+                <caption class="is-sr-only">Statistical comparison of Japanese V&amp;L Datasets.</caption>
+                <thead>
+                  <tr>
+                    <th>Dataset</th>
+                    <th>Type</th>
+                    <th class="has-text-right"># Images</th>
+                    <th class="has-text-right"># Texts</th>
+                    <th class="has-text-right">Avg. # Chars</th>
+                    <th class="has-text-right">Vocabulary Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6"><em><strong>Caption</strong></em></td>
+                  </tr>
+                  <tr>
+                    <td>STAIR Captions</td>
+                    <td>Human-annotated</td>
+                    <td class="has-text-right">123,287</td>
+                    <td class="has-text-right">616,435</td>
+                    <td class="has-text-right">23.80</td>
+                    <td class="has-text-right">30,195</td>
+                  </tr>
+                  <tr>
+                    <td>MS COCO Translation</td>
+                    <td>Machine-translated</td>
+                    <td class="has-text-right">123,287</td>
+                    <td class="has-text-right">616,767</td>
+                    <td class="has-text-right">22.41</td>
+                    <td class="has-text-right">32,960</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Simple (Ours)</td>
+                    <td>Alt</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">18.21</td>
+                    <td class="has-text-right">336,924</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Refined (Ours)</td>
+                    <td>Alt + LLM</td>
+                    <td class="has-text-right">3,884,629</td>
+                    <td class="has-text-right">3,884,629</td>
+                    <td class="has-text-right">38.03</td>
+                    <td class="has-text-right">314,900</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Detection (Ours)</td>
+                    <td>Detection + LLM</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">49.55</td>
+                    <td class="has-text-right">30,674</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-All (Ours)</td>
+                    <td>Alt + Detection + LLM</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">3,884,632</td>
+                    <td class="has-text-right">79.62</td>
+                    <td class="has-text-right">287,434</td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="6"><em><strong>VQA</strong></em></td>
+                  </tr>
+                  <tr>
+                    <td>Japanese Visual Genome</td>
+                    <td>Human-annotated</td>
+                    <td class="has-text-right">99,208</td>
+                    <td class="has-text-right">793,664</td>
+                    <td class="has-text-right">19.50</td>
+                    <td class="has-text-right">20,797</td>
+                  </tr>
+                  <tr>
+                    <td>GQA Translation</td>
+                    <td>Machine-translated</td>
+                    <td class="has-text-right">71,067</td>
+                    <td class="has-text-right">3,999,765</td>
+                    <td class="has-text-right">22.58</td>
+                    <td class="has-text-right">11,856</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-VQA-Refined (Ours)</td>
+                    <td>Alt + LLM</td>
+                    <td class="has-text-right">3,875,343</td>
+                    <td class="has-text-right">3,875,343</td>
+                    <td class="has-text-right">56.62</td>
+                    <td class="has-text-right">321,720</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-VQA-Detection (Ours)</td>
+                    <td>Detection + LLM</td>
+                    <td class="has-text-right">3,883,943</td>
+                    <td class="has-text-right">3,883,943</td>
+                    <td class="has-text-right">77.00</td>
+                    <td class="has-text-right">31,929</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-VQA-All (Ours)</td>
+                    <td>Alt + Detection + LLM</td>
+                    <td class="has-text-right">3,882,892</td>
+                    <td class="has-text-right">3,882,892</td>
+                    <td class="has-text-right">108.86</td>
+                    <td class="has-text-right">278,860</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="is-size-7 has-text-grey">Table: Statistical comparison of Japanese V&amp;L datasets (counts,
+              averages, and vocabulary sizes).</p>
+          </div>
+        </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
