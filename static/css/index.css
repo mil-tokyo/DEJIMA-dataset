@@ -177,3 +177,16 @@ body {
 .example-card .vqa-block p {
   margin-bottom: 0.25rem;
 }
+
+/* Constrain example cards to a readable width */
+.example-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional: limit image height while preserving ratio */
+.example-card .example-img {
+  max-height: 360px;
+  /* smaller image height */
+  object-fit: contain;
+}

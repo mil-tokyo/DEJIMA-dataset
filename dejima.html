@@ -320,7 +320,7 @@
       <p class="subtitle has-text-centered">Examples of image, caption, and VQA (Q/A)</p>
 
       <div class="columns is-multiline">
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -330,24 +330,49 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p>
-                    <strong>Caption:
-                    </strong>朱色の楼門が鮮やかに輝く平等院鳳凰堂。国宝の建築物が中央に立ち、屋根の金箔が陽光を反射してきらめいている。平安時代の風格を今に伝える荘厳な姿が、緑豊かな庭園に映える。
-                  </p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br>
+                      <em>【平等院鳳凰堂】平等院鳳凰堂は、平安時代後期から保持されてきた建造物や寺宝が現存する唯一の史跡です。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br>
+                      <em>平等院鳳凰堂は平安時代後期から現存する史跡で、当時の建造物や寺宝が保存されている。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>宮殿が画面中央よりやや右側に大きく描かれており、建物の詳細な装飾が目立つ。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br>
+                      <em>朱色の楼門が鮮やかに輝く平等院鳳凰堂。国宝の建築物が中央に立ち、屋根の金箔が陽光を反射してきらめいている。平安時代の風格を今に伝える荘厳な姿が、緑豊かな庭園に映える。</em>
+                    </p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>平等院鳳凰堂はどのような時代に建造されましたか？</p>
-                  <p>
-                    <strong>Answer:
-                    </strong>平等院鳳凰堂は平安時代後期（11世紀前半）に建立され、当時の建築様式や装飾が現在まで保存されています。この建造物は、歴史的に貴重な建造物や寺宝を現存させる唯一の史跡として知られています。
-                  </p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>平等院鳳凰堂はどのような歴史的価値がありますか？</em><br> <strong>A:</strong>
+                      <em>平等院鳳凰堂は、平安時代後期から現存する建造物や寺宝が残る唯一の史跡であり、日本の建築と美術の貴重な遺産です。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>画面のどの部分に宮殿が写っていますか？</em><br> <strong>A:</strong>
+                      <em>宮殿は画面の右側中央部に大きく写っています。その位置は縦方向中央よりやや下側、横方向では中央から右端に向かう領域に存在します。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>平等院鳳凰堂はどのような時代に建造されましたか？</em><br> <strong>A:</strong>
+                      <em>平等院鳳凰堂は平安時代後期（11世紀前半）に建立され、当時の建築様式や装飾が現在まで保存されています。この建造物は、歴史的に貴重な建造物や寺宝を現存させる唯一の史跡として知られています。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -357,21 +382,45 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p><strong>Caption: </strong>歌川広重の「袋井
-                    出茶屋ノ図」で、茶屋前で休む男性や枝ぶりの立派な老松が描かれる。画面右下の絵葉書風枠内に作品が収められ、人物たちの和服姿が江戸時代の雰囲気を漂わせる。</p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br> <em>東海道五拾三次『袋井 出茶屋ノ図』（歌川広重）</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br> <em>歌川広重作の浮世絵『東海道五拾三次 袋井
+                        出茶屋ノ図』。旅人らが茶屋で休憩し、遠景には木々が描かれた江戸時代の名所絵です。</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>男性が木の前で立ち、ポストカードが地面に置かれている。ポストカードは画面中央下部にあり、木はその左前方に位置する。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br> <em>歌川広重の「袋井
+                        出茶屋ノ図」で、茶屋前で休む男性や枝ぶりの立派な老松が描かれる。画面右下の絵葉書風枠内に作品が収められ、人物たちの和服姿が江戸時代の雰囲気を漂わせる。</em></p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>絵の中の人物は何人いますか？</p>
-                  <p><strong>Answer: </strong>浮世絵『袋井
-                    出茶屋ノ図』には、男性1人と別の人物2人が描かれています。男性は左下に立ち、他の2人は中央より右側に配置されています。これら3人の人物は、江戸時代の旅籠（はたご）の情景を背景に、それぞれ異なる姿勢で描かれています。
-                  </p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>この浮世絵のタイトルは何か？</em><br> <strong>A:</strong> <em>『袋井 出茶屋ノ図』（歌川広重）です。東海道五拾三次シリーズの一枚です。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>ポストカードはどこにありますか？</em><br> <strong>A:</strong>
+                      <em>ポストカードは画像の右下に位置し、画面の中央より少し下部に配置されています。周囲には他の人物や木が存在せず、独立して配置されていることが確認できます。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>絵の中の人物は何人いますか？</em><br> <strong>A:</strong> <em>浮世絵『袋井
+                        出茶屋ノ図』には、男性1人と別の人物2人が描かれています。男性は左下に立ち、他の2人は中央より右側に配置されています。これら3人の人物は、江戸時代の旅籠（はたご）の情景を背景に、それぞれ異なる姿勢で描かれています。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -381,23 +430,48 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p><strong>Caption:
-                    </strong>オバマ元大統領が紺色のネクタイ姿で手を差し出し、右側で中学生が握り返している。後方には黒色スーツの安倍首相が立ち、平和記念公園の緑地が背景に広がる。
-                  </p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br>
+                      <em>平和記念公園を訪問したオバマ米大統領と握手する長崎市の中学生。左は安倍首相＝2016年5月27日、広島市中区、代表撮影</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br>
+                      <em>オバマ米大統領が長崎市の中学生と握手し、安倍首相と共に平和記念公園を訪問＝2016年5月27日、広島市中区</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>少年が首元にネクタイを着け、手を胸元に当てる姿勢で立っている。ネクタイは少年の左肩近くに、手は体の中央付近に位置している。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br>
+                      <em>オバマ元大統領が紺色のネクタイ姿で手を差し出し、右側で中学生が握り返している。後方には黒色スーツの安倍首相が立ち、平和記念公園の緑地が背景に広がる。</em>
+                    </p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>写真中央で握手をしている人物は誰ですか？</p>
-                  <p>
-                    <strong>Answer:
-                    </strong>平和記念公園を訪れたオバマ米大統領と長崎市の中学生が握手しています。大統領は左側に位置する安倍首相と共に訪れており、この瞬間は歴史的な場面として記録されています。
-                  </p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>写真中央で握手しているのは誰ですか？</em><br> <strong>A:</strong> <em>写真中央で握手しているのは、オバマ米大統領と長崎市の中学生です。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>少年はどのような服を着ていますか？</em><br> <strong>A:</strong>
+                      <em>少年はネクタイを締めています。ネクタイは首元に整然と結ばれており、フォーマルな服装を想像させる要素です。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>写真中央で握手をしている人物は誰ですか？</em><br> <strong>A:</strong>
+                      <em>平和記念公園を訪れたオバマ米大統領と長崎市の中学生が握手しています。大統領は左側に位置する安倍首相と共に訪れており、この瞬間は歴史的な場面として記録されています。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -407,22 +481,47 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p><strong>Caption: </strong>白川郷の冬景色で、茅葺き屋根の民家が雪に覆われた森の中に佇んでいる。白銀の世界に黒い樹木がアクセントとなり、遠景には積雪した山並みが広がる。
-                  </p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br> <em>白川郷の雪景色(82)</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br>
+                      <em>白川郷の冬景色が広がり、合掌造りの民家が雪に覆われた静寂な風景を映している。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>冬景色の中、家の外壁の前に枯れ木が立っている。家は画面中央に配置され、木は左前方に斜めに傾いている。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br>
+                      <em>白川郷の冬景色で、茅葺き屋根の民家が雪に覆われた森の中に佇んでいる。白銀の世界に黒い樹木がアクセントとなり、遠景には積雪した山並みが広がる。</em>
+                    </p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>白川郷の雪景色の中で、最も目立つ建造物はどのような特徴がありますか？</p>
-                  <p>
-                    <strong>Answer:
-                    </strong>画面中央に位置する白川郷の民家は、伝統的な合掌造りの外観を持ち、屋根の雪に覆われた姿が特徴的です。雪化粧をした黒い梁や傾斜した茅葺き屋根が調和し、冬の厳しさを象徴する風景を形成しています。
-                  </p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>白川郷の写真にはどのような季節の特徴が写っていますか？</em><br> <strong>A:</strong>
+                      <em>白川郷の雪景色が写っており、冬の季節であることが分かります。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>家の外観の隣に何がありますか？</em><br> <strong>A:</strong>
+                      <em>家の外観の隣には木が植えられています。木は家の左側に位置し、冬景色の中に静かに佇んでいます。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>白川郷の雪景色の中で、最も目立つ建造物はどのような特徴がありますか？</em><br> <strong>A:</strong>
+                      <em>画面中央に位置する白川郷の民家は、伝統的な合掌造りの外観を持ち、屋根の雪に覆われた姿が特徴的です。雪化粧をした黒い梁や傾斜した茅葺き屋根が調和し、冬の厳しさを象徴する風景を形成しています。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -432,23 +531,44 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p><strong>Caption:
-                    </strong>歌舞伎俳優の市川海老蔵さんが黒紋付姿で床に立つ。左肩に刀を携え、正面を向いた表情は凛々しく、舞台の床面がコロナ禍の新たな公演スタイルを暗示している。
-                  </p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br> <em>コロナ禍の新たな公演の形 歌舞伎俳優
+                        市川海老蔵さん</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br> <em>市川海老蔵さんがコロナ禍の新たな公演形で舞台に立つ姿。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>人物が剣を構え、床の上で立ち去ろうとしている。剣は左斜め前方に向けられ、顔は右側上方に位置している。</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br>
+                      <em>歌舞伎俳優の市川海老蔵さんが黒紋付姿で床に立つ。左肩に刀を携え、正面を向いた表情は凛々しく、舞台の床面がコロナ禍の新たな公演スタイルを暗示している。</em></p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>市川海老蔵さんはどのような衣装で登場していますか？</p>
-                  <p>
-                    <strong>Answer:
-                    </strong>市川海老蔵さんは歌舞伎俳優として伝統的な衣装をまとめており、特に刀（sword）を手に持っており、舞台の床（floor）の上に立っています。顔（face）は濃厚な化粧が施され、歌舞伎の特徴的な表現が見受けられます。
-                  </p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>公演の様子をどのような条件下で撮影されていますか？</em><br> <strong>A:</strong>
+                      <em>コロナ禍の新たな公演の形として、歌舞伎俳優の市川海老蔵さんが出演する公演の様子が撮影されています。</em></p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>人物の手元には何がありますか？</em><br> <strong>A:</strong>
+                      <em>人物の手元には剣が握られています。剣は横向きに構えられており、人物の前方を指すような姿勢で保持されています。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>市川海老蔵さんはどのような衣装で登場していますか？</em><br> <strong>A:</strong>
+                      <em>市川海老蔵さんは歌舞伎俳優として伝統的な衣装をまとめており、特に刀（sword）を手に持っており、舞台の床（floor）の上に立っています。顔（face）は濃厚な化粧が施され、歌舞伎の特徴的な表現が見受けられます。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="column is-half-tablet is-one-third-desktop">
+        <div class="column is-full">
           <div class="card example-card">
             <div class="card-image">
               <figure class="image">
@@ -458,12 +578,37 @@
             <div class="card-content">
               <div class="content">
                 <div class="caption-block">
-                  <p><strong>Caption: </strong>新幹線が駅の跨線橋の下を通過し、背景には白銀の富士山がそびえ立つ。跨線橋は右半分に横たわり、新幹線は右斜め前方へ高速で走行中。</p>
+                  <p class="has-text-weight-semibold">Captioning Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Simple</span> <span
+                        class="is-size-7 has-text-grey">(filtered alt-text)</span><br> <em>新幹線と富士山 写真素材</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Refined</span> <span
+                        class="is-size-7 has-text-grey">(LLM-refined)</span><br> <em>新幹線が富士山の雄大な景色を背景に走る写真。</em></p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-Detection</span> <span
+                        class="is-size-7 has-text-grey">(from detection tags)</span><br>
+                      <em>歩道橋の下を新幹線が走っており、列車は橋脚の間に位置している。</em>
+                    </p>
+                    <p><span class="tag is-info is-light">DEJIMA-Cap-All</span> <span
+                        class="is-size-7 has-text-grey">(alt-text + tags)</span><br>
+                      <em>新幹線が駅の跨線橋の下を通過し、背景には白銀の富士山がそびえ立つ。跨線橋は右半分に横たわり、新幹線は右斜め前方へ高速で走行中。</em>
+                    </p>
+                  </div>
                 </div>
                 <div class="vqa-block">
-                  <p><strong>Question: </strong>写真に写っている交通機関は何ですか？</p>
-                  <p><strong>Answer: </strong>画面中央に新幹線（ bullet train
-                    ）が写っており、その速度感あふれるデザインが特徴的です。背景には人道橋が前景に配置されており、鉄道と富士山を連想させる構図となっています。</p>
+                  <p class="has-text-weight-semibold">VQA Variants</p>
+                  <div class="variant-list">
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Refined</span><br> <strong>Q:</strong>
+                      <em>写真の背景にある山はどの山ですか？</em><br> <strong>A:</strong> <em>背景にある山は富士山です。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-Detection</span><br> <strong>Q:</strong>
+                      <em>歩道橋の下を何が通過していますか？</em><br> <strong>A:</strong>
+                      <em>歩道橋の下を新幹線が通過しています。新幹線は歩道橋の支柱の間を高速で走行しており、その姿がはっきりと確認できます。</em>
+                    </p>
+                    <p><span class="tag is-link is-light">DEJIMA-VQA-All</span><br> <strong>Q:</strong>
+                      <em>写真に写っている交通機関は何ですか？</em><br> <strong>A:</strong> <em>画面中央に新幹線（ bullet train
+                        ）が写っており、その速度感あふれるデザインが特徴的です。背景には人道橋が前景に配置されており、鉄道と富士山を連想させる構図となっています。</em>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
