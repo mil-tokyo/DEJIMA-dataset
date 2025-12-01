@@ -322,6 +322,7 @@
               averages, and vocabulary sizes).</p>
           </div>
 
+          <hr style="margin: 1.5rem 0;">
           <!-- Human Evaluation. -->
           <h3 class="title is-4" id="statistical-comparison">Human Evaluation</h3>
           <div class="content has-text-justified">
@@ -475,6 +476,9 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">VLM Training Results (LLaVA)</h2>
+
+          <!-- Benchmark Results. -->
+          <h3 class="title is-4" id="statistical-comparison">Benchmark Results</h3>
           <div class="content has-text-justified">
             <div class="table-container">
               <table class="table is-striped is-fullwidth is-narrow">
@@ -540,6 +544,75 @@
                   style="max-width: 100%; height: auto;" />
                 <p class="is-size-6 has-text-grey">Figure: Sample output from the trained VLM (LLaVA).</p>
               </div>
+            </div>
+
+            <hr style="margin: 1.5rem 0;">
+            <h3 class="title is-4">Human Evaluation of VLM Outputs (Heron-bench)</h3>
+            <p>
+              In addition to automatic evaluations, we conducted human evaluations of VLM outputs on Heron-bench. All
+              outputs for 103 questions were assessed following the same protocol as the dataset-level evaluation. Each
+              question’s pair of model outputs (randomized order) was compared by one Japanese-speaking worker. In
+              total, 412 samples (103 × 4 comparisons) were evaluated by 28 workers. One control item per worker was
+              used; inconsistent workers (≈21.4%) were excluded. The effective sample size (<code>n</code>) for each
+              comparison is shown below.
+            </p>
+            <p>
+              Metrics: Japaneseness of text, Naturalness of text, Q–A relevance, Answer correctness. Significance was
+              tested with two-sided binomial tests against 50%, at the 5% level with Holm–Bonferroni correction.
+              <sup>*</sup> indicates significance at 5%.
+            </p>
+
+            <div class="table-container" style="margin-top: 1rem;">
+              <table class="table is-striped is-fullwidth is-narrow is-size-7">
+                <caption class="is-sr-only">VLM output: pairwise preference vs. DEJIMA-Cap-All &amp; DEJIMA-VQA-All
+                  pipeline.</caption>
+                <thead>
+                  <tr>
+                    <th>Compared Pipeline</th>
+                    <th class="has-text-right">n</th>
+                    <th class="has-text-right">Japaneseness of text</th>
+                    <th class="has-text-right">Naturalness of text</th>
+                    <th class="has-text-right">Q-A relevance</th>
+                    <th class="has-text-right">Answer correctness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MS COCO Translation &amp; Japanese Visual Genome</td>
+                    <td class="has-text-right">75</td>
+                    <td class="has-text-right">97.33<sup>*</sup></td>
+                    <td class="has-text-right">92.00<sup>*</sup></td>
+                    <td class="has-text-right">61.33</td>
+                    <td class="has-text-right">77.33<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Simple &amp; DEJIMA-VQA-Refined</td>
+                    <td class="has-text-right">88</td>
+                    <td class="has-text-right">79.55<sup>*</sup></td>
+                    <td class="has-text-right">79.55<sup>*</sup></td>
+                    <td class="has-text-right">53.41</td>
+                    <td class="has-text-right">50.00</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Detection &amp; DEJIMA-VQA-Detection</td>
+                    <td class="has-text-right">73</td>
+                    <td class="has-text-right">89.04<sup>*</sup></td>
+                    <td class="has-text-right">87.67<sup>*</sup></td>
+                    <td class="has-text-right">84.93<sup>*</sup></td>
+                    <td class="has-text-right">90.41<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Refined &amp; DEJIMA-VQA-Refined</td>
+                    <td class="has-text-right">88</td>
+                    <td class="has-text-right">63.64<sup>*</sup></td>
+                    <td class="has-text-right">97.73<sup>*</sup></td>
+                    <td class="has-text-right">77.27<sup>*</sup></td>
+                    <td class="has-text-right">70.45<sup>*</sup></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey">VLM output: pairwise preference vs. <strong>DEJIMA-Cap-All &amp;
+                  DEJIMA-VQA-All</strong> pipeline. * indicates significance at 5%.</p>
             </div>
           </div>
         </div>
