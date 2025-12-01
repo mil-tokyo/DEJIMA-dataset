@@ -207,7 +207,7 @@
           <h3 class="title is-4" id="statistical-comparison">Statistical Comparison</h3>
           <div class="content has-text-justified">
             <div class="table-container">
-              <table class="table is-striped is-fullwidth is-narrow">
+              <table class="table is-striped is-fullwidth is-narrow is-size-7">
                 <caption class="is-sr-only">Statistical comparison of Japanese V&amp;L Datasets.</caption>
                 <thead>
                   <tr>
@@ -321,7 +321,153 @@
             <p class="is-size-7 has-text-grey">Table: Statistical comparison of Japanese V&amp;L datasets (counts,
               averages, and vocabulary sizes).</p>
           </div>
+
+          <!-- Human Evaluation. -->
+          <h3 class="title is-4" id="statistical-comparison">Human Evaluation</h3>
+          <div class="content has-text-justified">
+            <p>
+              We evaluated caption and VQA quality via pairwise human comparisons (150 samples per dataset, randomized
+              order, 80 crowd workers). We inserted control items for quality and removed inconsistent annotations;
+              final sample sizes (<code>n</code>) are shown in each table.
+            </p>
+            <p>
+              Caption metrics: Japaneseness of image, Japaneseness of text, Naturalness of text, Image–text consistency,
+              Coverage, Expressiveness. VQA metrics: Japaneseness (image/text), Naturalness of text, Q–A relevance,
+              Q–image consistency, Answer correctness.
+            </p>
+            <p>
+              Significance was tested with two-sided binomial tests against 50%, using the 5% level with Holm–Bonferroni
+              correction. A <sup>*</sup> indicates significance at 5%.
+            </p>
+
+            <div class="table-container" style="margin-top: 1rem;">
+              <table class="table is-striped is-fullwidth is-narrow is-size-7">
+                <caption class="is-sr-only">Caption: Pairwise preference of DEJIMA-Cap-All vs. baselines.</caption>
+                <thead>
+                  <tr>
+                    <th>Compared Dataset</th>
+                    <th class="has-text-right">n</th>
+                    <th class="has-text-right">Japaneseness of image</th>
+                    <th class="has-text-right">Japaneseness of text</th>
+                    <th class="has-text-right">Naturalness of text</th>
+                    <th class="has-text-right">Image-text consistency</th>
+                    <th class="has-text-right">Coverage</th>
+                    <th class="has-text-right">Expressiveness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MS COCO Translation</td>
+                    <td class="has-text-right">105</td>
+                    <td class="has-text-right">82.86<sup>*</sup></td>
+                    <td class="has-text-right">87.62<sup>*</sup></td>
+                    <td class="has-text-right">86.67<sup>*</sup></td>
+                    <td class="has-text-right">20.00<sup>*</sup></td>
+                    <td class="has-text-right">39.05<sup>*</sup></td>
+                    <td class="has-text-right">92.38<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>STAIR Captions</td>
+                    <td class="has-text-right">135</td>
+                    <td class="has-text-right">74.07<sup>*</sup></td>
+                    <td class="has-text-right">77.78<sup>*</sup></td>
+                    <td class="has-text-right">62.22<sup>*</sup></td>
+                    <td class="has-text-right">20.74<sup>*</sup></td>
+                    <td class="has-text-right">43.70</td>
+                    <td class="has-text-right">68.89<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Refined</td>
+                    <td class="has-text-right">105</td>
+                    <td class="has-text-right">--</td>
+                    <td class="has-text-right">86.67<sup>*</sup></td>
+                    <td class="has-text-right">64.76<sup>*</sup></td>
+                    <td class="has-text-right">52.38</td>
+                    <td class="has-text-right">61.90<sup>*</sup></td>
+                    <td class="has-text-right">91.43<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Detection</td>
+                    <td class="has-text-right">135</td>
+                    <td class="has-text-right">--</td>
+                    <td class="has-text-right">76.30<sup>*</sup></td>
+                    <td class="has-text-right">65.93<sup>*</sup></td>
+                    <td class="has-text-right">62.96<sup>*</sup></td>
+                    <td class="has-text-right">70.37<sup>*</sup></td>
+                    <td class="has-text-right">81.48<sup>*</sup></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey">Caption: Pairwise preference of <strong>DEJIMA-Cap-All</strong> vs.
+                baselines. * indicates significance at 5%.</p>
+            </div>
+
+            <div class="table-container" style="margin-top: 1.5rem;">
+              <table class="table is-striped is-fullwidth is-narrow is-size-7">
+                <caption class="is-sr-only">VQA: Pairwise preference of DEJIMA-VQA-All vs. baselines.</caption>
+                <thead>
+                  <tr>
+                    <th>Compared Dataset</th>
+                    <th class="has-text-right">n</th>
+                    <th class="has-text-right">Japaneseness of image</th>
+                    <th class="has-text-right">Japaneseness of text</th>
+                    <th class="has-text-right">Naturalness of text</th>
+                    <th class="has-text-right">Q-A relevance</th>
+                    <th class="has-text-right">Q-Image consistency</th>
+                    <th class="has-text-right">Answer correctness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GQA Translation</td>
+                    <td class="has-text-right">105</td>
+                    <td class="has-text-right">91.43<sup>*</sup></td>
+                    <td class="has-text-right">92.38<sup>*</sup></td>
+                    <td class="has-text-right">89.52<sup>*</sup></td>
+                    <td class="has-text-right">41.90</td>
+                    <td class="has-text-right">51.43</td>
+                    <td class="has-text-right">41.90</td>
+                  </tr>
+                  <tr>
+                    <td>Japanese Visual Genome</td>
+                    <td class="has-text-right">135</td>
+                    <td class="has-text-right">92.59<sup>*</sup></td>
+                    <td class="has-text-right">87.41<sup>*</sup></td>
+                    <td class="has-text-right">78.52<sup>*</sup></td>
+                    <td class="has-text-right">31.85<sup>*</sup></td>
+                    <td class="has-text-right">38.52<sup>*</sup></td>
+                    <td class="has-text-right">34.81<sup>*</sup></td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-VQA-Refined</td>
+                    <td class="has-text-right">90</td>
+                    <td class="has-text-right">--</td>
+                    <td class="has-text-right">76.67<sup>*</sup></td>
+                    <td class="has-text-right">74.44<sup>*</sup></td>
+                    <td class="has-text-right">57.78</td>
+                    <td class="has-text-right">56.67</td>
+                    <td class="has-text-right">57.78</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-VQA-Detection</td>
+                    <td class="has-text-right">120</td>
+                    <td class="has-text-right">--</td>
+                    <td class="has-text-right">79.17<sup>*</sup></td>
+                    <td class="has-text-right">72.50<sup>*</sup></td>
+                    <td class="has-text-right">61.67<sup>*</sup></td>
+                    <td class="has-text-right">65.83<sup>*</sup></td>
+                    <td class="has-text-right">63.33<sup>*</sup></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey">VQA: Pairwise preference of <strong>DEJIMA-VQA-All</strong> vs.
+                baselines. * indicates significance at 5%.</p>
+            </div>
+
+          </div>
         </div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="results">
