@@ -324,6 +324,76 @@
         </div>
   </section>
 
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">VLM Training Results (LLaVA)</h2>
+          <div class="content has-text-justified">
+            <div class="table-container">
+              <table class="table is-striped is-fullwidth is-narrow">
+                <caption class="is-sr-only">Evaluation on the learned model using Japanese V&L benchmarks.</caption>
+                <thead>
+                  <tr>
+                    <th>Stage 1</th>
+                    <th>Stage 2</th>
+                    <th class="has-text-right">JA-VLM-Bench-In-the-Wild<br>(LLM-as-a-Judge ↑)</th>
+                    <th class="has-text-right">Heron-bench<br>(LLM-as-a-Judge ↑)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>STAIR Captions</td>
+                    <td>Japanese Visual Genome</td>
+                    <td class="has-text-right">3.04</td>
+                    <td class="has-text-right">31.57</td>
+                  </tr>
+                  <tr>
+                    <td>STAIR Captions</td>
+                    <td>GQA Translation</td>
+                    <td class="has-text-right">1.58</td>
+                    <td class="has-text-right">20.54</td>
+                  </tr>
+                  <tr>
+                    <td>MS COCO Translation</td>
+                    <td>Japanese Visual Genome</td>
+                    <td class="has-text-right">2.88</td>
+                    <td class="has-text-right">33.94</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Simple</td>
+                    <td>DEJIMA-VQA-Refined</td>
+                    <td class="has-text-right"><strong>3.12</strong></td>
+                    <td class="has-text-right">44.82</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Refined</td>
+                    <td>DEJIMA-VQA-Refined</td>
+                    <td class="has-text-right">1.96</td>
+                    <td class="has-text-right">15.89</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-Detection</td>
+                    <td>DEJIMA-VQA-Detection</td>
+                    <td class="has-text-right">1.36</td>
+                    <td class="has-text-right">21.95</td>
+                  </tr>
+                  <tr>
+                    <td>DEJIMA-Cap-All</td>
+                    <td>DEJIMA-VQA-All</td>
+                    <td class="has-text-right">2.48</td>
+                    <td class="has-text-right"><strong>52.26</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="is-size-7 has-text-grey">Table: Evaluation on the learned model using Japanese V&L benchmarks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="examples">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Dataset Examples</h2>
